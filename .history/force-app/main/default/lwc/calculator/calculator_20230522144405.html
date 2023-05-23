@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="LWC Calculator">
+      <lightning-input type="number" label="Enter value A" name="A" oninput={callme}></lightning-input>
+      <lightning-input type="number" label="Enter value B" name="B" oninput={callme}></lightning-input>
+      <lightning-button label="Calculate" onclick={show}></lightning-button>
+      <p>{resultvalue}</p>
+    </lightning-card>
+  </template>
+  

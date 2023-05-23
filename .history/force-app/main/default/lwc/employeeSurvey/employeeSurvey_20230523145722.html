@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Employee Survey">
+        <div class="slds-p-around_medium">
+            <template if:true={showSurvey}>
+                <h1>Please provide your feedback:</h1>
+                <lightning-input label="Name" value={name} onchange={handleNameChange}></lightning-input>
+                <lightning-input label="Department" value={department} onchange={handleDepartmentChange}></lightning-input>
+                <lightning-input type="textarea" label="Feedback" value={feedback} onchange={handleFeedbackChange}></lightning-input>
+                <lightning-button label="Submit" onclick={submitSurvey}></lightning-button>
+            </template>
+            <template if:false={showSurvey}>
+                <h1>Thank you for your feedback!</h1>
+                <p>Your survey has been submitted successfully.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

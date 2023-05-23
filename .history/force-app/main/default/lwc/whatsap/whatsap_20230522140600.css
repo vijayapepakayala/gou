@@ -1,0 +1,13 @@
+.container {
+    width: 300px;
+    margin: auto;
+  }
+  
+  .input-container {
+    margin-bottom: 10px;
+  }
+  
+  .result {
+    margin-top: 20px;
+  }
+  

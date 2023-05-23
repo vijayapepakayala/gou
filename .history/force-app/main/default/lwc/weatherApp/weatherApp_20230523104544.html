@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Weather App">
+        <div class="slds-p-horizontal_medium">
+            <lightning-input
+                type="text"
+                label="City"
+                value={city}
+                onchange={handleCityChange}
+            ></lightning-input>
+            <lightning-button label="Get Weather" onclick={getWeather}></lightning-button>
+            <div if:true={weatherData}>
+                <h2>{weatherData.name}</h2>
+                <p>Temperature: {weatherData.main.temp} °C</p>
+                <p>Humidity: {weatherData.main.humidity}%</p>
+                <p>Description: {weatherData.weather[0].description}</p>
+                <div class="weather-icon">
+                    <img src={getWeatherIconUrl(weatherData.weather[0].icon)} alt="Weather Icon" />
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

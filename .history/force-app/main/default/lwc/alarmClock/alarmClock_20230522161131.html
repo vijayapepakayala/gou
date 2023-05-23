@@ -1,0 +1,9 @@
+<template>
+    <div class="alarm-clock">
+      <h1>Alarm Clock</h1>
+      <lightning-input type="time" label="Set Alarm Time" onchange={handleTimeChange}></lightning-input>
+      <lightning-button label="Set Alarm" onclick={setAlarm}></lightning-button>
+      <lightning-button label="Clear Alarm" onclick={clearAlarm}></lightning-button>
+    </div>
+  </template>
+  

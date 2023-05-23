@@ -1,0 +1,19 @@
+<template>
+    <div class="alarm-clock">
+      <h2>Alarm Clock</h2>
+      <div class="input-container">
+        <label for="alarmTime">Set Alarm Time:</label>
+        <input type="time" id="alarmTime" value={alarmTime} oninput={handleTimeChange} />
+      </div>
+      <div class="button-container">
+        <lightning-button label="Set Alarm" onclick={setAlarm} disabled={isAlarmSet}></lightning-button>
+        <lightning-button label="Stop Alarm" onclick={stopAlarm} disabled={notisAlarmSet}></lightning-button>
+      </div>
+      <div class="volume-controls">
+        <lightning-button-icon icon-name="utility:volume_high" alternative-text="Volume High" onclick={increaseVolume}></lightning-button-icon>
+        <lightning-button-icon icon-name="utility:volume_low" alternative-text="Volume Low" onclick={decreaseVolume}></lightning-button-icon>
+      </div>
+      <audio if:true={isPlaying} src={alarmSound} volume={volume} onended={stopAlarm}></audio>
+    </div>
+  </template>
+  

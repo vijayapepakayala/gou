@@ -1,0 +1,29 @@
+<template>
+    <lightning-card>
+        
+            <div class="calculator">
+              <div class="display">{displayValue}</div>
+              <div class="buttons">
+                <lightning-button label="1" onclick={handleButtonPress}></lightning-button>
+                <lightning-button label="2" onclick={handleButtonPress}></lightning-button>
+                <lightning-button label="3" onclick={handleButtonPress}></lightning-button>
+                <lightning-button label="+" onclick={handleOperatorPress}></lightning-button>
+                <lightning-button label="4" onclick={handleButtonPress}></lightning-button>
+                <lightning-button label="5" onclick={handleButtonPress}></lightning-button>
+                <lightning-button label="6" onclick={handleButtonPress}></lightning-button>
+                <lightning-button label="-" onclick={handleOperatorPress}></lightning-button>
+                <lightning-button label="7" onclick={handleButtonPress}></lightning-button>
+                <lightning-button label="8" onclick={handleButtonPress}></lightning-button>
+                <lightning-button label="9" onclick={handleButtonPress}></lightning-button>
+                <lightning-button label="*" onclick={handleOperatorPress}></lightning-button>
+                <lightning-button label="0" onclick={handleButtonPress}></lightning-button>
+                <lightning-button label="=" onclick={calculateResult}></lightning-button>
+                <lightning-button label="/" onclick={handleOperatorPress}></lightning-button>
+                <lightning-button label="Clear" onclick={clearDisplay}></lightning-button>
+              </div>
+            </div>
+          
+          
+</lightning-card>
+  </template>
+  

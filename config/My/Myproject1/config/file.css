@@ -1,0 +1,17 @@
+* element */
+div{color:blue}
+p{
+    background: red;
+    color: aqua;
+}
+/*id*/
+ #user{
+    color:red;
+}
+#user1{
+    background-color: blue;
+}
+/*class*/
+.shambu{
+    color: red;
+}

@@ -1,0 +1,15 @@
+<template>
+    <div class="alarm-clock">
+      <h2>Alarm Clock</h2>
+      <div class="input-container">
+        <label for="alarmTime">Set Alarm Time:</label>
+        <input type="time" id="alarmTime" value={alarmTime} oninput={handleTimeChange} />
+      </div>
+      <div class="button-container">
+        <lightning-button label="Set Alarm" onclick={setAlarm} disabled={isAlarmSet}></lightning-button>
+        <lightning-button label="Stop Alarm" onclick={stopAlarm} disabled={!isAlarmSet}></lightning-button>
+      </div>
+      <audio if:true={isPlaying} src={alarmSound} onended={stopAlarm}></audio>
+    </div>
+  </template>
+  
