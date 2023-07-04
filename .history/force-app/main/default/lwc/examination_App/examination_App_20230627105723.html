@@ -1,0 +1,18 @@
+<template>
+    <template if:true={questions}>
+      <lightning-card title="Online Examination">
+        <template for:each={questions} for:item="question">
+          <p key={question.Id}>{question.Question__c}</p>
+          <lightning-radio-group
+            key={question.Id}
+            name={question.Id}
+            options={answerOptions}
+            value={selectedAnswers[question.Id]}
+            onchange={handleAnswerSelection}
+          ></lightning-radio-group>
+        </template>
+        <lightning-button label="Submit" onclick={submitExam}></lightning-button>
+      </lightning-card>
+    </template>
+  </template>
+  

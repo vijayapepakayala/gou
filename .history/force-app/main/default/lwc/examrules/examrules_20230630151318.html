@@ -1,0 +1,26 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-left_medium">
+             <h3 class="fonts"><strong>Exam Rules and Regulations</strong></h3>
+             <ul  class="bullet-list slds-has-dividers_top slds-has-block-links"><strong>
+                &nbsp;<li class="slds-item">Don't Do: Smartphones are not permitted to be used during testing.</li>
+                &nbsp;<li class="slds-item">Do: All electronic devices, textbooks, and course materials are restricted.</li>
+                &nbsp;<li class="slds-item">You must use a functioning webcam and microphone.</li>
+                &nbsp;<li class="slds-item">No cell phones or other secondary devices in the room or test area.</li>
+                &nbsp;<li class="slds-item">Your desk/table must be clear or any materials except your test-taking device.</li>
+                &nbsp;<li class="slds-item">No one else can be in the room with you.</li>
+                &nbsp;<li class="slds-item">No talking.</li>
+                &nbsp;<li class="slds-item">The testing room must be well-lit and you must be clearly visible.</li>
+                &nbsp;<li class="slds-item">No dual screens/monitors.</li>
+                &nbsp;<li class="slds-item">Do not leave the camera.</li>
+                &nbsp;<li class="slds-item">No use of additional applications or internet.</li>
+            </strong> 
+             </ul>
+            <!-- Agree checkbox -->
+            <lightning-input type="checkbox" label="I agree the Terms&Conditions" onchange={handleAgreeChange}></lightning-input>
+            <!-- Register Now button -->
+            </br>
+            <lightning-button label="Register Now" variant="brand" onclick={handleRegisterNow} disabled={isRegisterButtonDisabled}></lightning-button>
+         </div> 
+    </lightning-card>
+</template>

@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Exam Paper">
+      <template for:each={examQuestions} for:item="question">
+        <div key={question.Id}>
+          <p>{question.Question__c}</p>
+          <template for:each={question.Options__r} for:item="option">
+            <label key={option.Id}>
+              <input type="radio" name={question.Id} value={option.Id} onchange={handleAnswerSelection} />
+              {option.Option__c}
+            </label>
+          </template>
+        </div>
+      </template>
+      <div>
+        <lightning-button label="Submit" onclick={submitExam} variant="brand"></lightning-button>
+      </div>
+    </lightning-card>
+    <template if:true={showResult}>
+      <lightning-card title="Exam Result">
+        <p>Total Score: {score}</p>
+        <p>Congratulations, you scored {score} out of {examQuestions.length}</p>
+      </lightning-card>
+    </template>
+  </template>
+  

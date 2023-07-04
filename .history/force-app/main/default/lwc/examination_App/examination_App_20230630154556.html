@@ -1,0 +1,48 @@
+<template>
+  <lightning-card title="Available Courses">
+    <template for:each={courses} for:item="course">
+      <div key={course.id} onclick={handleCourseClick} data-course-id={course.id}>
+        {course.name}
+      </div>
+    </template>
+  </lightning-card>
+
+  <template if:true={showExamPaper}>
+    <lightning-card title="Exam Paper">
+      <template if:true={selectedCourse}>
+        <div>{selectedCourse.name}</div>
+        <template for:each={selectedCourse.questions} for:item="question">
+          <div key={question.id}>
+            <p>{question.text}</p>
+            <template for:each={question.options} for:item="option">
+              <p key={option.id}>
+                <lightning-input
+                  type="radio"
+                  label={option.text}
+                  name={question.id}
+                  value={option.id}
+                  onchange={handleAnswerSelection}
+                  checked={selectedAnswers[question.id] === option.id}
+                ></lightning-input>
+              </p>
+            </template>
+          </div>
+        </template>
+        <div>
+          <lightning-button label="Submit" onclick={handleSubmit}></lightning-button>
+        </div>
+      </template>
+    </lightning-card>
+
+    <template if:true={showTestResult}>
+      <lightning-card title="Test Result">
+        <template if:true={testPassed}>
+          <div>Congratulations! You have successfully completed the course.</div>
+        </template>
+        <template if:false={testPassed}>
+          <div>{testResultMessage}</div>
+        </template>
+      </lightning-card>
+    </template>
+  </template>
+</template>

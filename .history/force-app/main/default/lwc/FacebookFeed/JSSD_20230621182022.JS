@@ -1,0 +1,16 @@
+//Promise method
+var Promise = new Promise(function(resolve,reject){
+    var str1 = 'Helloworld'
+    var str2 = 'Helloworld'
+     if(str1===str2){
+        resolve();
+     }else{
+        reject();
+     }
+});
+promise.then(function(){
+    console.log('Your resolve is Helloworld Success')
+}).catch(function(){
+    console.log('Condition false its is Reject method')
+})
+

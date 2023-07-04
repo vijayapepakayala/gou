@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Exam Rules and Regulations">
+        <div class="slds-p-around_medium">
+            <p>Here are the rules and regulations for the exam:</p>
+            <!-- Agree checkbox -->
+            <lightning-input type="checkbox" label="I agree to the rules and regulations" onchange={handleAgreeChange}></lightning-input>
+            <!-- Register Now button -->
+            <lightning-button label="Register Now" variant="brand" onclick={handleRegisterNow} disabled={!agreeChecked}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,9 @@
+.bullet-list {
+    list-style-type: disc; /* Set the bullet style (disc, circle, square, etc.) */
+    color: rgb(12, 119, 162); /* Set the bullet color */
+    /* Add more styles as needed */
+  }
+  .Font{
+    font-style: italic;
+    font-size: large;
+  }

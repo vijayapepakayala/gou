@@ -1,0 +1,152 @@
+<!-- <template>
+    <lightning-card title="Examination Paper">
+      <template for:each={examPaperQuestions} for:item="question">
+        <div key={question.Id}>
+          <p>{question.Question__c}</p>
+          <template for:each={question.Options} for:item="option">
+            <div key={option}>
+              <input type="radio" name={question.Id} value={option} onchange={handleOptionChange}></input>
+              <label>{option}</label>
+            </div>
+          </template>
+          <hr />
+        </div>
+      </template>
+      <lightning-button variant="brand" label="Submit" onclick={submitExam} disabled={disableSubmit}></lightning-button>
+      <p if:true={showResult}>Congratulations! You scored {score} out of {totalQuestions}</p>
+    </lightning-card>
+  </template>
+   -->
+  
+   <!-- <template>
+    <lightning-card title="Examination Paper">
+        <template for:each={examPaperQuestions} for:item="question">
+            <div key={question.Id}>
+                <p>{question.Question__c}</p>
+                <template for:each={question.Options} for:item="option">
+                    <div key={option}>
+                        <input type="radio" name={question.Id} value={option} onchange={handleOptionChange}></input>
+                        <label>{option}</label>
+                    </div>
+                </template>
+                <hr />
+            </div>
+        </template>
+        <lightning-button variant="brand" label="Submit" onclick={submitExam} disabled={disableSubmit}></lightning-button>
+        <p if:true={showResult}>Congratulations! You scored {score} out of {totalQuestions}</p>
+    </lightning-card>
+</template> -->
+<!-- <template>
+    <div class="slds-size_medium">
+    <lightning-card title="Examination Paper">
+        <div class="slds-m-around_medium">
+      <template for:each={examPaperQuestions} for:item="question">
+        <div key={question.Id}>
+          <p>{question.Question__c}</p>
+          <template for:each={question.Options} for:item="option">
+            <div key={option}>
+              <input type="radio" name={question.Id} value={option} onchange={handleOptionChange}></input>
+              <label>{option}</label>
+            </div>
+          </template>
+          <hr />
+        </div>
+      </template>
+    </div>
+      <lightning-button variant="brand" label="Submit" onclick={submitExam} disabled={disableSubmit}></lightning-button>
+      <p if:true={showResult}>Congratulations! You scored {score} out of {totalQuestions}</p>
+    </lightning-card>
+</div>
+  </template> -->
+  <!-- <template>
+    <div class="slds-size_large">
+        <lightning-card title="Examination Paper">
+            <div class="slds-m-around_medium">
+                <template for:each={examPaperQuestions} for:item="question">
+                    <div key={question.Id}>
+                        <p>{question.Question__c}</p>
+                        <div class="slds-grid slds-wrap">
+                            <template for:each={question.Options} for:item="option">
+                                <div key={option} class="slds-size_1-of-2">
+                                    <div class="slds-grid slds-grid_vertical-align-center">
+                                        <div class="slds-grid">
+                                            <input type="radio" name={question.Id} value={option} onchange={handleOptionChange}></input>
+                                            <label class="slds-m-left_xx-small">{option}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                        <hr />
+                    </div>
+                </template>
+            </div>
+            <lightning-button variant="brand" label="Submit" onclick={submitExam} disabled={disableSubmit}></lightning-button>
+            <p if:true={showResult}>Congratulations! You scored {score} out of {totalQuestions}</p>
+        </lightning-card>
+    </div>
+</template> -->
+
+<!-- <template>
+    
+        <lightning-card title="Examination Paper">
+            <div class="slds-m-around_medium">
+                <template for:each={examPaperQuestions} for:item="question">
+                    <div key={question.Id} class="slds-text-align_center slds-p-bottom_medium">
+                        <p class="slds-text-heading_medium">{question.Question__c}</p>
+                        <div class="slds-grid slds-wrap">
+                            <template for:each={question.Options} for:item="option">
+                                <div key={option} class="slds-size_1-of-2">
+                                    <div class="slds-grid slds-grid_vertical-align-center">
+                                        <div class="slds-grid">
+                                            <input type="radio" name={question.Id} value={option} onchange={handleOptionChange}></input>
+                                            <label class="slds-m-left_xx-small slds-text-body_regular">{option}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                        <hr />
+                    </div>
+                </template>
+            </div>
+            <lightning-button variant="brand" label="Submit" onclick={submitExam} disabled={disableSubmit}></lightning-button>
+            <p if:true={showResult} class="slds-text-heading_medium">Congratulations! You scored {score} out of {totalQuestions}</p>
+        </lightning-card>
+   
+</template> -->
+<template>
+    <lightning-card title="Examination Paper">
+        <div class="slds-m-around_medium">
+            <template for:each={examPaperQuestions} for:item="question">
+                <div key={question.Id} class="slds-p-bottom_medium">
+                    <div class="slds-text-align_center slds-p-bottom_small">
+                        <p class="slds-text-heading_medium">{question.Question__c}</p>
+                    </div>
+                    <div class="slds-grid slds-wrap">
+                        <template for:each={question.Options} for:item="option">
+                            <div key={option} class="slds-size_1-of-2 slds-p-around_small">
+                                <div class="slds-grid slds-grid_vertical-align-center">
+                                    <div class="slds-grid">
+                                        <input type="radio" name={question.Id} value={option} onchange={handleOptionChange}></input>
+                                        <label class="slds-m-left_xx-small slds-text-body_regular">{option}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <hr />
+                </div>
+            </template>
+        </div>
+        <lightning-button variant="brand" label="Submit" onclick={submitExam} disabled={disableSubmit}></lightning-button>
+        <p if:true={showResult} class="slds-text-heading_medium slds-p-top_medium">Congratulations! You scored {score} out of {totalQuestions}</p>
+    </lightning-card>
+</template>
+
+
+
+  
+
+
+  

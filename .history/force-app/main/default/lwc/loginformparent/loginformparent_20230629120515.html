@@ -1,0 +1,10 @@
+<!-- ParentComponent.html -->
+<template>
+    <template if:true={loggedIn}>
+      <c-Questions__c></c-Questions__c>
+    </template>
+    <template if:false={loggedIn}>
+      <c-loginpage onlogin={handleLogin}></c-loginpage>
+    </template>
+  </template>
+  

@@ -1,0 +1,5 @@
+.bullet-list {
+    list-style-type: disc; /* Set the bullet style (disc, circle, square, etc.) */
+    color: green; /* Set the bullet color */
+    /* Add more styles as needed */
+  }
