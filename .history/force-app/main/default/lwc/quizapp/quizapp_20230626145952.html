@@ -1,0 +1,27 @@
+<!-- quizApp.html -->
+<template>
+    <template if:true={quizStarted}>
+        <h2>{currentQuestion.question}</h2>
+        <template for:each={currentQuestion.answers} for:item="answer">
+            <p key={answer}>
+                <lightning-radio-group
+                    name="answer"
+                    label={answer}
+                    value={selectedAnswer}
+                    onchange={handleAnswerSelection}
+                ></lightning-radio-group>
+            </p>
+        </template>
+        <template if:true={showNextButton}>
+            <lightning-button label="Next" onclick={nextQuestion}></lightning-button>
+        </template>
+        <template if:true={showResults}>
+            <h3>Quiz Results</h3>
+            <p>Correct Answers: {correctAnswers}</p>
+            <p>Total Questions: {quizData.length}</p>
+        </template>
+    </template>
+    <template if:false={quizStarted}>
+        <lightning-button label="Start Quiz" onclick={startQuiz}></lightning-button>
+    </template>
+</template>

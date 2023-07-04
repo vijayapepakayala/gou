@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Online Examination App">
+      <div class="slds-p-around_medium">
+        <lightning-input label="Student Name" value={studentName} onchange={handleNameChange}></lightning-input>
+        <template if:true={isNameEntered}>
+          <lightning-button label="Start Test" variant="brand" onclick={startTest}></lightning-button>
+          <template if:true={isTestStarted}>
+            <h2>Timer: {timer} seconds</h2>
+          </template>
+        </template>
+      </div>
+    </lightning-card>
+  </template>
+  

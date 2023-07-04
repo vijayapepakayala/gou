@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Employee Survey">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Name" value={employeeName} onchange={handleNameChange}></lightning-input>
+            <lightning-input label="Department" value={department} onchange={handleDepartmentChange}></lightning-input>
+            <lightning-textarea label="Feedback" value={feedback} onchange={handleFeedbackChange}></lightning-textarea>
+            <lightning-button label="Submit" variant="brand" onclick={handleSubmit}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

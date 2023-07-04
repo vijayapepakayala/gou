@@ -1,0 +1,45 @@
+<template>
+  <lightning-card title="Exam Questions">
+      <template if:true={questions}>
+          <div class="slds-m-around_medium">
+              <template for:each={questions} for:item="question" for:index="index">
+                  <div key={question.value} class="slds-p-bottom_medium">
+                      <p>{question.label}</p>
+                      <template for:each={question.options} for:item="option">
+                          <div key={option.value} class="slds-form-element">
+                            <lightning-radio-group
+                            name={question.value}
+                            value={question.selectedAnswer}
+                            data-questionindex={index}
+                            onchange={handleOptionChange}
+                            disabled={isSubmitted}>
+                            <template for:each={question.options} for:item="opt">
+                                <lightning-radio-option
+                                    key={opt.value}
+                                    label={opt.label}
+                                    value={opt.value}>
+                                </lightning-radio-option>
+                            </template>
+                        </lightning-radio-group>
+                        
+                          </div>
+                      </template>
+                  </div>
+              </template>
+          </div>
+          <div class="slds-m-around_medium">
+              <div class="slds-align_absolute-center">
+                  <lightning-button
+                      variant="brand"
+                      label="Submit"
+                      onclick={calculateScore}
+                      disabled={isSubmitDisabled}>
+                  </lightning-button>
+              </div>
+              <div class="slds-m-top_medium">
+                  <p>Score: {score}</p>
+              </div>
+          </div>
+      </template>
+  </lightning-card>
+</template>

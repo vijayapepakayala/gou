@@ -1,0 +1,17 @@
+<template>
+    <template if:true={currentQuizQuestion}>
+        <h2>{currentQuizQuestion.Question}</h2>
+        <lightning-radio-group
+            name="quiz-options"
+            options={[
+                { label: currentQuizQuestion.Option1, value: currentQuizQuestion.Option1 },
+                { label: currentQuizQuestion.Option2, value: currentQuizQuestion.Option2 },
+                { label: currentQuizQuestion.Option3, value: currentQuizQuestion.Option3 },
+                { label: currentQuizQuestion.Option4, value: currentQuizQuestion.Option4 }
+            ]}
+            value={selectedAnswer}
+            onchange={handleAnswerChange}>
+        </lightning-radio-group>
+        <lightning-button label="Submit" variant="brand" onclick={handleSubmit}></lightning-button>
+    </template>
+</template>

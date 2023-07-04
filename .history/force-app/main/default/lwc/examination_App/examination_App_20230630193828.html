@@ -1,0 +1,18 @@
+<template>
+  <template if:true={questions}>
+      <div class="questions">
+          <template for:each={questions} for:item="question" for:index="index">
+              <div key={question.value} class="question">
+                  <p>{question.label}</p>
+                  <template for:each={question.options} for:item="option">
+                      <label key={option.value}>
+                          <input type="radio" name={question.value} value={option.value} data-questionindex={index}
+                              onchange={handleOptionChange} disabled={isSubmitted} />
+                          {option.label}
+                      </label>
+                  </template>
+              </div>
+          </template>
+      </div>
+      <div class="submit-container">
+          <button class

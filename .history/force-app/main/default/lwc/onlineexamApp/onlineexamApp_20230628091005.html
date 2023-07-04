@@ -1,0 +1,34 @@
+<lightning-card title="Online Exam">
+    <lightning-layout multiple-rows="true">
+        <lightning-layout-item size="12" padding="around-small">
+            <lightning-input required type="text" label="Enter Student Name" data-id="studentName"></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="12" padding="around-small">
+            <div class="slds-align_absolute-center">
+                <lightning-button variant="brand" label="Start Test" onclick={onStartTest}></lightning-button>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+    <template if:true={examStarted}>
+        <div style="font-size: 29px; color: blue;">
+            <lightning-layout multiple-rows="true">
+                <template for:each={questionWrapper} for:item="eachQuestion">
+                    <lightning-layout-item key={eachQuestion.qNo} size="12" padding="around-small">
+                        {eachQuestion.qNo}) {eachQuestion.question.Question__c}
+                    </lightning-layout-item>
+                    <lightning-layout-item key={eachQuestion.qNo} size="12" padding="around-small">
+                        <lightning-radio-group name={eachQuestion.question.Id}
+                            options={eachQuestion.options}
+                            value={eachQuestion.selectedAnswer}
+                            type="radio"></lightning-radio-group>
+                    </lightning-layout-item>
+                </template>
+                <lightning-layout-item size="12" padding="around-small">
+                    <div class="slds-align_absolute-center">
+                        <lightning-button variant="brand" label="Submit" onclick={onSubmit}></lightning-button>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </template>
+</lightning-card>

@@ -1,0 +1,40 @@
+<!-- <template>
+    <lightning-card title="Examination Paper">
+      <template for:each={examPaperQuestions} for:item="question">
+        <div key={question.Id}>
+          <p>{question.Question__c}</p>
+          <template for:each={question.Options} for:item="option">
+            <div key={option}>
+              <input type="radio" name={question.Id} value={option} onchange={handleOptionChange}></input>
+              <label>{option}</label>
+            </div>
+          </template>
+          <hr />
+        </div>
+      </template>
+      <lightning-button variant="brand" label="Submit" onclick={submitExam} disabled={disableSubmit}></lightning-button>
+      <p if:true={showResult}>Congratulations! You scored {score} out of {totalQuestions}</p>
+    </lightning-card>
+  </template>
+   -->
+  
+   <template>
+    <lightning-card title="Examination Paper">
+      <template for:each={examPaperQuestions} for:item="question" for:index="index">
+        <div key={question.Id}>
+          <!-- <p>{questionNumber[index]} {question.Question__c}</p> -->
+          <template for:each={question.Options} for:item="option">
+            <div key={option}>
+              <input type="radio" name={question.Id} value={option} onchange={handleOptionChange}></input>
+              <label>{option}</label>
+            </div>
+          </template>
+          <hr />
+        </div>
+      </template>
+      <lightning-button variant="brand" label="Submit" onclick={submitExam} disabled={disableSubmit}></lightning-button>
+      <p if:true={showResult}>Congratulations! You scored {score} out of {totalQuestions}</p>
+    </lightning-card>
+  </template>
+  
+  

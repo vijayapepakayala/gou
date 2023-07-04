@@ -1,0 +1,18 @@
+<template>
+  <lightning-card>
+    <div class="container">
+      <div class="page-details">
+        <h2>{pageDetails.name1}</h2>
+        <p>{pageDetails.website1}</p>
+        <p>Fan Count: {pageDetails.fancount1}</p>
+      </div>
+      <div class="buttons">
+        <lightning-button-group>
+          <lightning-button label="Like" variant="brand" onclick={handleLike}></lightning-button>
+          <lightning-button label="Share" variant="brand" onclick={handleShare}></lightning-button>
+        </lightning-button-group>
+      </div>
+    </div>
+  </lightning-card>
+  </template>
+  

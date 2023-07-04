@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Examination App">
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item padding="around-small">
+        <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">
+        <lightning-input type="text" label="Student Name">Enter your name</lightning-input>
+        </div>
+    </lightning-layout-item>
+        </lightning-layout>
+        <div class="slds-card slds-p-around_medium">
+            <h2 class="slds-m-bottom_medium heading">Stop watch</h2>
+            <div class="timer">{timer}</div>
+            <div class="slds-p-around_medium">
+                <lightning-button-group>
+                    <lightning-button variant="success" label="Start" onclick={actionHandler}></lightning-button>
+                    <lightning-button variant="destructive" label="Stop" onclick={actionHandler}></lightning-button>
+                    <lightning-button variant="brand" label="Reset" onclick={actionHandler}></lightning-button>
+                </lightning-button-group>
+            </div>
+        </div>
+    </lightning-card>
+</template>

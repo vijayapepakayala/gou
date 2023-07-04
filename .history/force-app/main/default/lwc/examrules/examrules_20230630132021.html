@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Exam Rules and Regulations">
+        <div class="slds-p-around_medium">
+             <ul  class="bullet-list"><strong>
+                &nbsp;<li>Don't Do: Smartphones are not permitted to be used during testing.</li>
+                &nbsp;<li>Do: All electronic devices, textbooks, and course materials are restricted.</li>
+                &nbsp;<li>You must use a functioning webcam and microphone.</li>
+                &nbsp;<li>No cell phones or other secondary devices in the room or test area.</li>
+                &nbsp;<li>Your desk/table must be clear or any materials except your test-taking device.</li>
+                &nbsp;<li>No one else can be in the room with you.</li>
+                &nbsp;<li>No talking.</li>
+                &nbsp;<li>The testing room must be well-lit and you must be clearly visible.</li>
+                &nbsp;<li>No dual screens/monitors.</li>
+                &nbsp;<li>Do not leave the camera.</li>
+                &nbsp;<li>No use of additional applications or internet.</li>
+            </strong> 
+             </ul>
+            <!-- Agree checkbox -->
+            <lightning-input type="checkbox" label="I agree the Terms&Conditions" onchange={handleAgreeChange}></lightning-input>
+            <!-- Register Now button -->
+            <lightning-button label="Register Now" variant="brand" onclick={handleRegisterNow} disabled={isRegisterButtonDisabled}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

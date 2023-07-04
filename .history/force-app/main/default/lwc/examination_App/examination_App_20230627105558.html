@@ -1,0 +1,31 @@
+<template>
+    <lightning-card title="Online Examination App">
+        <template if:true={showQuestions}>
+            <template for:each={questions} for:item="question">
+                <div key={question.Id}>
+                    <p>{question.Question}</p>
+                    <template for:each={question.AvailableAnswers} for:item="answer">
+                        <p key={answer}>{answer}</p>
+                    </template>
+                    <lightning-radio-group
+                        name={question.Id}
+                        label="Select Answer"
+                        options={question.AvailableAnswers}
+                        value={selectedAnswers[question.Id]}
+                        onchange={handleAnswerChange}
+                    ></lightning-radio-group>
+                </div>
+            </template>
+            <lightning-button label="Submit" onclick={handleSubmit} variant="brand"></lightning-button>
+        </template>
+        <template if:false={showQuestions}>
+            <template if:true={showCertificate}>
+                <p>Congratulations, {studentName}! You have successfully completed the examination.</p>
+                <lightning-button label="Download Certificate" onclick={handleDownload} variant="brand"></lightning-button>
+            </template>
+            <template if:false={showCertificate}>
+                <p>Sorry, you did not qualify for the certificate. Please try again.</p>
+            </template>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,32 @@
+<template>
+    <div style = "
+      height:600px;
+      overflow-y:auto;
+      
+      padding:10px;
+      ">
+      <template for:each={receivedMessage.feed} for:item="itm" style="padding:7px;">
+      <lightning-card key={itm.id} class="slds-p-around_xxx-small">
+      <table style="width:0%">
+      <tr>
+         <td><img class="slds-icon slds-icon_medium" src={itm.profilePic} /></td>
+         <td><h2><b> &nbsp; {itm.name} </b></h2></td>
+      </tr>
+      </table>
+      <br/>
+      <h3> {itm.status} </h3>
+      <br/>
+      <img class="card-image" src={itm.image}/>
+      </br>
+      <span>{itm.like} Likes, {itm.comment} Comments, {itm.share} Shares </span>
+      <br/>
+      <lightning-button-group>
+        <lightning-button label="like" name={itm.id} icon-name="utility:like" onclick={handleClick}></lightning-button>
+        <lightning-button label="like" name={itm.id} icon-name="utility:comments" onclick={handleClick}></lightning-button>
+        <lightning-button label="like" name={itm.id} icon-name="utility:internal_share" onclick={handleClick}></lightning-button>
+        </lightning-button-group>
+        </lightning-card>
+      </template>
+    </div>
+    
+   </template>
